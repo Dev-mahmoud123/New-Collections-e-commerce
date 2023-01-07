@@ -1,11 +1,14 @@
 import { Fragment, useEffect, useState } from "react";
 import React from "react";
 import { NavLink, useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/reducers/cartReducer";
 
 function Product() {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const getProduct = async () => {
@@ -16,6 +19,10 @@ function Product() {
     };
     getProduct();
   }, [id]);
+
+  const handleCart = (product) => {
+    dispatch(addToCart(product));
+  };
 
   const Loading = () => {
     return <Fragment>Loading......</Fragment>;
@@ -42,7 +49,12 @@ function Product() {
           </p>
           <h3 className="fw-bold display-6">${product.price}</h3>
           <p className="lead">{product.description}</p>
-          <button className="btn btn-outline-dark">Add To Cart</button>
+          <button
+            className="btn btn-outline-dark"
+            onClick={() => handleCart(product)}
+          >
+            Add To Cart
+          </button>
           <NavLink to="/cart" className="btn btn-dark ms-2">
             Go To Cart
           </NavLink>
@@ -50,7 +62,6 @@ function Product() {
       </>
     );
   };
-
   return (
     <div className="container py-2 ">
       <div className="row py-2">{loading ? <Loading /> : <ShowProduct />}</div>

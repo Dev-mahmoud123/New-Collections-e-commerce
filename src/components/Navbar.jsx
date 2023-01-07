@@ -1,15 +1,17 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import {NavLink} from "react-router-dom"
 
 function Navbar() {
 
-
+  const {cartTotalQuantity} = useSelector((state)=> state.cart);
+  console.log(cartTotalQuantity)
 
   return (
     <nav className="navbar navbar-expand-lg bg-light py-3 shadow-sm">
       <div className="container">
         <NavLink className="navbar-brand fw-bold fs-4" to="/">
-          The Collections
+          New Collections
         </NavLink>
         <button
           className="navbar-toggler"
@@ -56,7 +58,7 @@ function Navbar() {
             </NavLink>
             <NavLink className="btn btn-outline-dark" to="/cart">
               <i className="fa-solid fa-cart-plus me-2"></i>
-              Cart(0)
+              Cart ({cartTotalQuantity})
             </NavLink>
           </div>
         </div>

@@ -1,5 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 import Cart from './components/Cart';
 import Home from './components/Home';
 import NavbarComponent from './components/Navbar';
@@ -11,6 +13,7 @@ function App() {
   return (
     <div className="App">
      <NavbarComponent/>
+     <ToastContainer/>
       <Routes>
          <Route exact path='/' element= <Home/>/>
          <Route exact path='/products' element=<Products/> />

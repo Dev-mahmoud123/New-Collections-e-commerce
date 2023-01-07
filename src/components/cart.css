@@ -1,0 +1,114 @@
+.cart .titles {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+@media (max-width: 767px) {
+  .cart .titles {
+    display: none;
+  }
+}
+.cart .cartItem {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+@media (max-width: 767px) {
+  .cart .cartItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 767px) {
+  .cartItem div {
+    margin: 10px 0 0;
+  }
+}
+.cartItem .description {
+  display: flex;
+  align-items: center;
+}
+.cartItem .description img {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+.cartItem .description p {
+  flex-wrap: wrap;
+  text-align: center;
+}
+.cartItem .quantity span {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  font-weight: 500;
+}
+.cartItem .quantity button {
+  outline: none;
+  border: none;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+.cartItem .quantity button:first-child {
+  background-color: black;
+  color: white;
+}
+.cartItem .quantity button:last-child {
+  background-color: #ccc;
+  color: black;
+}
+.cartItem .remove button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border: 1px solid #ddd;
+  outline: none;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color: transparent;
+}
+.cart-summary .clear-cart {
+  width: 100px; 
+  height: 50px;   
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+.cart-summary .cart-check {
+      width: 270px;
+}
+.cart-summary .subtotal {
+      display: flex;
+      justify-content: space-between;
+      font-size: 18px;
+      font-weight: bold;
+}
+.cart-summary p {
+      font-size: 14px;
+      color: #777;
+}
+.cart-summary .cart-check button {
+      width: 100%;
+      height: 30px;
+      color: white;
+      outline: none;
+      border: none;
+      background-color: #1659a7;
+      border-radius: 5px;
+      text-transform: capitalize;
+}
