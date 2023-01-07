@@ -9,3 +9,6 @@ this app created with html and css bootstrap and react js
    
 #### this app used react redux version ^8.0.5
 #### this app used react router to navigate between pages version ^6.5.0
+#### this app usef toastify package to show toast message.
+
+## the website link https://new-collections.netlify.app/
